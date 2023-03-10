@@ -1,4 +1,5 @@
 from . import operasi
+import os
 
 DBNAME = "data.txt"
 TEMPLATE = {
@@ -11,8 +12,10 @@ TEMPLATE = {
 
 def initConsole():
     try :
-        with open (DBNAME,'r') as file :
-            file.read(DBNAME)
+        with open(DBNAME, "r",encoding = "utf-8") as file :
+            pass
+        print("\nDatabase Tersedia")
+        os.system("pause")
     except :
         print("\nDatabase tidak ditemukan silahkan membuat data baru\n")
         operasi.createFirstData()
