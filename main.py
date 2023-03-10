@@ -1,8 +1,11 @@
 import os
+import CRUD as CRUD
+import time
 os.system("cls")
 print("========================================================")
 print("SELAMAT DATANG DIPROGRAM DATABASE PERPUSTAKAAN SEDERHANA")
 print("--------------created by Naser Setiawan-----------------")
+CRUD.initConsole()
 
 while True : 
     os.system("cls")
