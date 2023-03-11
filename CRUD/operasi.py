@@ -4,6 +4,27 @@ import random
 import string
 import os
 
+def deleteData(noBuku):
+    try :
+        with open(database.DBNAME,"r") as file :
+            counter = 0
+            while True :
+                content = file.readline()
+                if len(content) == 0 :
+                    break
+                elif counter == (noBuku - 1) :
+                    pass
+                else :
+                    with open("dataTemp.txt","a", encoding = "utf-8") as tempFile :
+                        tempFile.write(content)
+                counter += 1
+    except :
+        print("Tidak bisa menghapus data, database error")
+    os.remove(database.DBNAME)
+    os.rename("dataTemp.txt",database.DBNAME)
+
+
+
 def updateData(noBuku,dataAdd,pk,penulis,judul,tahun):
 
     data = database.TEMPLATE.copy()

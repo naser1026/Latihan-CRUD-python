@@ -1,8 +1,51 @@
 from . import database,operasi
 
-def updateConsole() :
+
+def deleteConsole():
 	readConsole()
 	jumlahBuku = operasi.readData(jmlhBuku = True)
+	print(jumlahBuku)
+	while True :
+		while True :
+			try :
+				noBuku = int(input(f"Pilih buku yang akan dihapus\t: "))
+				if noBuku > 0 and noBuku <= jumlahBuku :
+					break
+				else :
+					print(f"No buku tidak ditemukan (1 - {jumlahBuku})")
+			except :
+				print("Pilihan harus angka")
+		
+		dataBuku = operasi.readData(index = noBuku - 1)
+		dataBreak = dataBuku.split(",")
+		dataAdd = dataBreak[0]
+		pk = dataBreak[1]
+		penulis = dataBreak[2]
+		judul = dataBreak[3]
+		tahun = dataBreak[4][:-1]
+		print("="*92)
+		print(f"\n1.Penulis\t: {penulis:.20}\n2.Judul\t\t: {judul:.20}\n3.Tahun\t\t: {tahun:.4}")
+		print("-"*92)
+		while True : 
+			try :
+				isDone = str.lower(input("\nApakah yakin akan dihapus (y/n)? "))
+				if isDone == "n" or isDone == "y" :
+					break
+				else :
+					print("Jawaban tidak valid")
+			except :
+				print("Jawaban harus huruf")
+		if isDone == "y" :
+			break
+	operasi.deleteData(noBuku)
+
+
+
+
+
+def updateConsole() :
+	jumlahBuku = operasi.readData(jmlhBuku = True)
+	readConsole()
 	while True :
 		try :
 			noBuku = int(input(f"Pilih buku yang akan diupdate\t: "))
@@ -84,11 +127,12 @@ def readConsole():
 		TAHUN = dataBreak[4][:-1]
 		print(f"{index+1:<3}|{PENULIS:.40}|{JUDUL:.40}|{TAHUN:5}|")
 	# Footer
-	print("\n\n"+"-"*92)
+	print("\n"+"-"*92)
 
 def createConsole():
+	print("\n"+"-"*92)
 	print("Masukan data buku")
-	penulis = input("Penulis\t: ")
+	penulis = input("\nPenulis\t: ")
 	judul = input("Judul\t: ")
 	while True :
 	    try :

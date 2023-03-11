@@ -11,13 +11,13 @@ while True :
     print("========================================================")
     print("--------------created by Naser Setiawan-----------------")
     print("SELAMAT DATANG DIPROGRAM DATABASE PERPUSTAKAAN SEDERHANA\n")
-    print("1.Read Data")
-    print("2.Create Data")
-    print("3.Update Data")
-    print("4.Delete Data")
+    print("1. Read Data")
+    print("2. Create Data")
+    print("3. Update Data")
+    print("4. Delete Data")
     while True :
         try : 
-            user_option = int(input("Pilih Opsi\t: "))
+            user_option = int(input("\nPilih Opsi\t: "))
             if user_option <= 4 :
                 break
             print("Opsi tidak valid (1,2,3,4) ")
@@ -28,7 +28,7 @@ while True :
         case 1 : CRUD.readConsole()
         case 2 : CRUD.createConsole()
         case 3 : CRUD.updateConsole()
-        case 4 : print("DELETE")
+        case 4 : CRUD.deleteConsole()
     
     while True :
         try :
