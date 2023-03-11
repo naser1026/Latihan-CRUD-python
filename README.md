@@ -1,2 +1,2 @@
 # Latihan-CRUD-python
-latihan crud bahasa pemograman python
+Latihan CRUD database perpustakaan sederhana
