@@ -27,7 +27,7 @@ while True :
     match user_option :
         case 1 : CRUD.readConsole()
         case 2 : CRUD.createConsole()
-        case 3 : print("UPDATE")
+        case 3 : CRUD.updateConsole()
         case 4 : print("DELETE")
     
     while True :

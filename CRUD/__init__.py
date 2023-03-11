@@ -1,2 +1,2 @@
 from .database import initConsole
-from . views import readConsole,createConsole
+from . views import readConsole,createConsole,updateConsole
