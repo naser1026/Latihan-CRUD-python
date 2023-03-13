@@ -18,4 +18,17 @@ def initConsole():
         os.system("pause")
     except :
         print("\nDatabase tidak ditemukan silahkan membuat data baru\n")
-        operasi.createFirstData()
+        print("\n"+"-"*92)
+        print("Masukan data buku")
+        penulis = input("\nPenulis\t: ")
+        judul = input("Judul\t: ")
+        while True :
+            try :
+                tahun = int(input("Tahun\t: "))
+                if len(str(tahun)) == 4 :
+                    break
+                else :
+                    print("Tahun tidak valid (yyyy)")
+            except :
+                print("Tahun tidak valid (yyyy)")
+        operasi.createData(penulis,judul,tahun)
